@@ -16,7 +16,9 @@ body {
   padding: 30px 20px;
   line-height: 1.6;
 }
-
+.container {
+  position: relative; /* Acts as the anchor/boundary for the image */
+}
 /* Headings & Text (Type Selectors) */
 h1, h2 {
   font-weight: 700;
