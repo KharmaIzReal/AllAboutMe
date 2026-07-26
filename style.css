@@ -44,6 +44,7 @@ p {
 
 /* 2. Header Banner (ID Selector) */
 #main-header {
+  position: relative;
   background-color: #1e293b;
   border: 1px solid #334155;
   border-top: 4px solid #d946ef;
@@ -53,7 +54,13 @@ p {
   text-align: center;
   box-shadow: 0 10px 25px -5px rgba(217, 70, 239, 0.15);
 }
-
+.top-right-img {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px; /* Thumbnail size */
+  height: auto;
+}
 #main-header h1 {
   color: #f8fafc;
   margin: 0 0 16px 0;
