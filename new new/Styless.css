@@ -1,0 +1,101 @@
+/* ========================================================
+   Responsive layout with Grid/Flex — Styled for Homework 2
+   Breakpoints: 320px (mobile), 768px (tablet), 1200px (desktop)
+======================================================== */
+
+/* Reset & base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 20px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-width: 0;
+}
+
+/* Constrain content and avoid horizontal scrolling */
+main { max-width: 1200px; margin: 0 auto; width: 100%; }
+
+/* Headings & text */
+h1, h2 { font-weight: 700; letter-spacing: -0.02em; margin: 0; }
+h2 { color: #d946ef; margin-bottom: 12px; }
+p { color: #cbd5e1; font-size: 1.05rem; margin: 0 0 12px 0; }
+
+/* Header banner */
+#main-header {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-top: 4px solid #d946ef;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px -5px rgba(217, 70, 239, 0.12);
+}
+
+#main-header .header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+#main-header h1 { color: #f8fafc; font-size: 1.6rem; }
+
+/* Navigation */
+.nav-menu ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 18px; flex-wrap: wrap; }
+.nav-menu a {
+  color: #94a3b8; text-decoration: none; font-weight: 600; text-transform: uppercase;
+  font-size: 0.78rem; letter-spacing: 0.05em; transition: color .18s ease;
+}
+.nav-menu a:hover { color: #d946ef; }
+
+/* Card styling */
+.card {
+  background-color: #1e293b;
+  border-left: 4px solid #d946ef;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.styled-list, .favorites-list { padding-left: 20px; margin-top: 10px; border-top: 1px solid #334155; padding-top: 12px; }
+li { color: #94a3b8; margin-bottom: 8px; }
+li::marker { color: #d946ef; font-weight: bold; }
+
+footer { text-align: center; margin-top: 28px; color: #64748b; font-size: 0.9rem; }
+
+/* ===== Layout: Grid for main content ===== */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* Tablet: 2-column grid */
+@media (min-width: 768px) {
+  #main-header .header-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+  #main-header h1 { font-size: 1.9rem; }
+  .nav-menu ul { gap: 24px; }
+  main { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop: 3-column grid */
+@media (min-width: 1200px) {
+  main { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  #main-header { padding: 28px; }
+  #main-header h1 { font-size: 2.1rem; }
+}
+
+/* Small screens: ensure nav stacks and cards are full width; visibly changes layout */
+@media (max-width: 480px) {
+  .nav-menu ul { flex-direction: column; gap: 8px; align-items: center; }
+  #main-header h1 { font-size: 1.25rem; }
+  body { padding: 14px; }
+}
+
+/* Accessibility & spacing tweaks to prevent overlap */
+.card h2 { margin-bottom: 8px; }
+.card p + p { margin-top: 8px; }
