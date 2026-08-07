@@ -1,0 +1,9 @@
+# Ignore exported GitHub page snapshot
+AllAboutMe_new new*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# node
+node_modules/
